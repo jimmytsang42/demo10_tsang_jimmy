@@ -30,9 +30,8 @@ function populateReviews() {
     let hikeCardTemplate = document.getElementById("reviewCardTemplate");
     let hikeCardGroup = document.getElementById("reviewCardGroup");
 
-    //let params = new URL(window.location.href) //get the url from the searbar
-    //let hikeID = params.searchParams.get("docID");
-    var hikeID = localStorage.getItem("hikeDocID");
+    let params = new URL(window.location.href) //get the url from the searbar
+    let hikeID = params.searchParams.get("docID")
     
     // doublecheck: is your collection called "Reviews" or "reviews"?
     db.collection("reviews").where( "hikeDocID", "==", hikeID).get()
